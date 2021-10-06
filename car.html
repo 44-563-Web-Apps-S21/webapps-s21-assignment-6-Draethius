@@ -19,6 +19,17 @@
         <input type = "button" onclick="orderCar()" value = "Order a car">
     </form>
 
+    <form>
+        <br>
+        <input type = "text" value = "color" id = "propertyID">
+        <label for = "propertyID">Enter a property</label> <br>
+
+        <input type = "text" id = "propertyValueID">
+        <label for = "propertyValueID">Enter a value</label> <br>
+
+        <input type="button" onclick = "updateCar()" value = "Update the car"
+    </form>
+
     <p id = "carResults">This text will be replaced</p>
 
     <script>
@@ -50,6 +61,15 @@
             }
 
             outward1.innerHTML = JSON.stringify(my_car)
+        }
+
+        function updateCar(){
+            propertyType = document.getElementById("propertyID").value
+            propertyValue = document.getElementById("propertyValueID").value
+            out = document.getElementById("carResults")
+
+            my_car[propertyType] = propertyValue
+            out.innerHTML = JSON.stringify(my_car)
         }
     </script>
 
