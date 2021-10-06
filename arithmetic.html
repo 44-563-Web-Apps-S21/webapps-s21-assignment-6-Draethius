@@ -41,5 +41,39 @@
     }
 </script>
 
+<form>
+    <input type="radio" onclick="processRadio()" id = "add" value = "plus">
+    <label for="add">+</label></br>
+  
+    <input type="radio" onclick="processRadio()" id = "subtract" value = "minus">
+    <label for="subtract">-</label></br>
+
+    <input type="radio" onclick="processRadio()" id = "multiply" value = "times">
+    <label for="multiply">*</label></br>
+
+    <input type="radio" onclick="processRadio()" id = "divide" value = "divide">
+    <label for="divide">/</label></br>
+
+  </form>
+
+  <p id="results2">This text will be replaced </p>
+  <script>
+      function processRadio(){
+        base = document.getElementById("base").value
+        exponent = document.getElementById("exponent").value
+        outward = document.getElementById("results2")
+
+        if(document.getElementById("add").checked){
+            outward.innerHTML = base + " plus " + exponent + " = " + (base + exponent)
+        }else if(document.getElementById("subtract").checked){
+            outward.innerHTML = base + " minus " + exponent + " = " + (base - exponent)
+        }else if (document.getElementById("multiply").checked){
+            outward.innerHTML = base + " times " + exponent + " = " + (base * exponent)
+        }else if (document.getElementById("divide").checked){
+            outward.innerHTML = base + " divided by " + exponent + " = " + (base / exponent)
+        }
+      }
+  </script>
+
 </body>
 </html> 
