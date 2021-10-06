@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Math stuff
+    </title>
+    <h1>Michael Simmons Computes</h1>
+</head> 
+
+
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="base">Enter a base </label>
+    <input type ="number" id="base" name="baseNum" value=10> <br>
+
+    <label for="exponent">Enter an exponent </label>
+    <input type ="number" id="exponent" name="exponentNum" value = 2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="results">This text will be replaced </p>
+
+<script> 
+    function powers(){
+        base = document.getElementById("base").value
+        exponent = document.getElementById("exponent").value
+        outward = document.getElementById("results")
+
+        mathResults = ""
+
+        for(i = 1; i <= exponent; i++){
+            mathResults = mathResults + " " + (base ** i)
+        }
+
+        outward.innerHTML = "Powers of " + base + " are: " + mathResults
+    }
+</script>
+
+</body>
+</html> 
